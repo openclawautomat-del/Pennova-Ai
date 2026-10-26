@@ -1,0 +1,19 @@
+name: Release
+# "v3.2.0" jaisa tag push karo to installable zip khud Release mein lag jayegi.
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build zip
+        run: bash bin/build-zip.sh
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/*.zip
+          generate_release_notes: true

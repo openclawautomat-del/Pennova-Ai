@@ -1,0 +1,12 @@
+/.git
+/.github
+/bin
+/build
+/.editorconfig
+/.gitignore
+/.distignore
+/README.md
+/CONTRIBUTING.md
+/CODE_OF_CONDUCT.md
+/SECURITY.md
+*.zip
